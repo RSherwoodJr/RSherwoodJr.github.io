@@ -72,7 +72,7 @@ img {
 <p>-If we insure the phone and it breaks, the payout is <span class="math">\(-cn-dk\)</span> ($c for insurance over n months, $d deductible for each phone)<br />-If we insure the phone and it doesn’t break, the payout is <span class="math">\(-cn\)</span> (the cost of insurance, by itself)<br />-If we don’t insure the phone and it breaks, the payout is <span class="math">\(-xk\)</span> (the cost of replacing k phones)<br />-If we don’t insure the phone and it doesn’t break, the payout is <span class="math">\(0\)</span></p>
 <p>The payout matrix is then:</p>
 <!-- html table generated in R 3.2.2 by xtable 1.7-4 package -->
-<!-- Fri Sep 25 16:32:33 2015 -->
+<!-- Fri Sep 25 17:54:26 2015 -->
 <table border="1">
 <tr>
 <th>
@@ -111,6 +111,7 @@ Without Insurance
 <p><span class="math">\[p(-cn-dk)+(1-p)(-cn) = p(-xk)+(1-p)(0)\]</span></p>
 <p>Since we want to know what the probability of breaking our phone would have to be in order to justify insurance, we solve for p:</p>
 <p><span class="math">\[-cnp-dkp-cn+cnp = -xkp\]</span> <span class="math">\[-dkp-cn = -xkp\]</span> <span class="math">\[-dkp+xkp = cn\]</span> <span class="math">\[p(xk-dk) = cn\]</span> <span class="math">\[p = \frac{cn}{xk-dk}\]</span> <span class="math">\[p = \frac{cn}{(x-d)k}\]</span></p>
+<p>If you’re decent with math, you might recognize that this formula is basically “the cost of the plan divided by the additional cost we’d have to pay for all the replacement phones if we didn’t have insurance.”</p>
 <p>Now that we have a formula, let’s consider some situations.</p>
 <p>My provider’s fee is $10 a month (c=10), and the deductibe for my phone would be $175 (d=175).</p>
 <p>Suppose my history suggests I’d never break my phone more than once over the two years of my contract (<span class="math">\(k=1\)</span>), and since I don’t know when that might happen, I’d have to insure it the entire time (<span class="math">\(n=24\)</span>), and that I’d replace it with a brand new phone if I didn’t have insurance (<span class="math">\(x=650\)</span>, the original MSRP, because I don’t want to assume that I’m not breaking it when it’s still at that price). Then:</p>
@@ -120,7 +121,7 @@ Without Insurance
 <p><span class="math">\[\frac{240}{x-175} \geq 1\]</span> <span class="math">\[240 \geq x-175\]</span> <span class="math">\[415 \geq x\]</span></p>
 <p>This means that, if I can find a replacement for less than $415, and I’d only have to replace the phone once over two years, I should <strong>absolutely not</strong> purchase insurance. To demonstrate:</p>
 <!-- html table generated in R 3.2.2 by xtable 1.7-4 package -->
-<!-- Fri Sep 25 16:32:33 2015 -->
+<!-- Fri Sep 25 17:54:26 2015 -->
 <table border="1">
 <tr>
 <th>
@@ -175,8 +176,8 @@ Without Insurance
 <p>In conclusion, I’ll remind you of the formula, and urge you to take a few minutes thinking about this, before throwing your money away.</p>
 <p><span class="math">\[p = \frac{cn}{(x-d)k}\]</span></p>
 <p>If you determine the probability of breaking your phone k times in n months and replacing it with a phone that costs x is higher than p, then get insurance. Otherwise, don’t.</p>
+<p><a href="http://rsherwoodjr.github.io/index.html">Return to Index</a></p>
 
-<p><a href="/index.html">Return to Index</a></p>
 
 </div>
 
