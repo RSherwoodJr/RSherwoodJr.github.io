@@ -72,7 +72,7 @@ img {
 <p>-If we insure the phone and it breaks, the payout is <span class="math">\(-cn-dk\)</span> ($c for insurance over n months, $d deductible for each phone)<br />-If we insure the phone and it doesn’t break, the payout is <span class="math">\(-cn\)</span> (the cost of insurance, by itself)<br />-If we don’t insure the phone and it breaks, the payout is <span class="math">\(-xk\)</span> (the cost of replacing k phones)<br />-If we don’t insure the phone and it doesn’t break, the payout is <span class="math">\(0\)</span></p>
 <p>The payout matrix is then:</p>
 <!-- html table generated in R 3.2.2 by xtable 1.7-4 package -->
-<!-- Fri Sep 25 17:54:26 2015 -->
+<!-- Fri Sep 25 17:58:57 2015 -->
 <table border="1">
 <tr>
 <th>
@@ -121,7 +121,7 @@ Without Insurance
 <p><span class="math">\[\frac{240}{x-175} \geq 1\]</span> <span class="math">\[240 \geq x-175\]</span> <span class="math">\[415 \geq x\]</span></p>
 <p>This means that, if I can find a replacement for less than $415, and I’d only have to replace the phone once over two years, I should <strong>absolutely not</strong> purchase insurance. To demonstrate:</p>
 <!-- html table generated in R 3.2.2 by xtable 1.7-4 package -->
-<!-- Fri Sep 25 17:54:26 2015 -->
+<!-- Fri Sep 25 17:58:57 2015 -->
 <table border="1">
 <tr>
 <th>
@@ -159,7 +159,7 @@ Without Insurance
 <p>As you can see, there is no outcome where insurance has a higher payout–it will always cost more.</p>
 <p>Now, let’s look at the formula again:</p>
 <p><span class="math">\[p = \frac{cn}{(x-d)k}\]</span></p>
-<p>The variable k, which represents the number of times we break the phone, is just a multiplier for the denominator. What this means is, if you were to break the phone twice, the probability of doing so would have to be half of what it was if you broke it once to be indifferent. So if I were to replace two broken phones with two new, identical phones, and keep insurance for the entire two years, the probability of doing this would only need to be higher than 50.5%/2 = 25.25% for insurance to be the smart decision. And for insurance to never make sense, I’d have to find two phones whose <em>average</em> cost was less than $415. If you were to break your phone thrice, you should really invest in a case.</p>
+<p>The variable <span class="math">\(k\)</span>, which represents the number of times we break the phone, is just a multiplier for the denominator. What this means is, if you were to break the phone twice, the probability of doing so would have to be half of what it was if you broke it once to be indifferent. So if I were to replace two broken phones with two new, identical phones, and keep insurance for the entire two years, the probability of doing this would only need to be higher than 50.5%/2 = 25.25% for insurance to be the smart decision. And for insurance to never make sense, I’d have to find two phones whose <em>average</em> cost was less than $415. If you were to break your phone thrice, you should really invest in a case.</p>
 <p>The last variable to explore is <span class="math">\(n\)</span>. We’ve established fairly well that insurance is a poor investment if you’re not likely to break your phones, but what if you ALWAYS break your phone? What if the expected lifespan of a phone in your possession is 10 months, and you REFUSE to get a rugged case for it? That’s what exploration of the variable <span class="math">\(n\)</span> will give us–<span class="math">\(n\)</span> represents the number of months that we pay for insurance. Now, if you did the prior analysis and decided insurance is worthwhile for you, you might think “well, can’t I use a similar approach to decide how many months to insure the phone for?” The answer is no; the problem is that, if you don’t know when the phone might break, you risk insuring it for some set number of months, canceling insurance, breaking your phone the next month, and then possibly spending twice as much to replace it when you factor in the money you wasted on insurance you canceled. So the following approach should only be used to determine if you should insure the phone at all, knowing that you are going to break it. It’s essentially an analysis of “how often would I have to break my phone for insurance to save me money?” The complexity of this analysis, however, comes from determining the market value of a replacement phone in advance–this is a problem worthy of its own study in the field of economics. However, that doesn’t mean we can’t consider some scenarios.</p>
 <p>Suppose that used phones end up being available relatively soon after release for $350 and we don’t deem it likely that we’ll break more than one phone. Using our formula, we can find the point at which p is greater than 1 to determine when insurance becomes a dominated strategy.</p>
 <p><span class="math">\[\frac{10n}{350-175} \geq 1\]</span> <span class="math">\[\frac{10n}{175} \geq 1\]</span> <span class="math">\[10n \geq 175\]</span> <span class="math">\[n \geq \frac{175}{10}\]</span> <span class="math">\[n \geq 17.5\]</span></p>
