@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Phone Insurance Sensibility Calculator</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Phone Insurance Sensibility Calculator">
+  <meta name="author" content="Randy Sherwood">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Phone Insurance Sensibility Calculator</h1>
+    <h2></h2>
+    <p>Randy Sherwood<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>The Problem</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Many mobile phone carriers offer insurance plans that are of little benefit to most consumers</li>
+<li>Some, such as T-Mobile, even include the first month &quot;free&quot; so that you have to remember to opt out later</li>
+<li>Not only does the monthly cost add up, but they all have a hidden deductible that come out of the customer&#39;s pocket should a phone break</li>
+<li>If customers did the math, most would find that these insurance plans are a poor idea</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Game Theory</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Using a game theory approach, we can determine whether or not buying phone insurance is a good decision based on some characteristics of the plan and cost of the phone.</p>
+
+<!-- html table generated in R 3.2.2 by xtable 1.7-4 package -->
+
+<!-- Sat Nov 21 18:16:39 2015 -->
+
+<table border=1>
+<tr> <th>  </th> <th> Breaks k times </th> <th> Never Breaks </th>  </tr>
+  <tr> <td align="center"> With Insurance </td> <td align="center"> -cn-dk </td> <td align="center"> -cn </td> </tr>
+  <tr> <td align="center"> Without Insurance </td> <td align="center"> -xk </td> <td align="center"> 0 </td> </tr>
+   </table>
+
+<ul>
+<li>Let c be the monthly cost of the insurance<br></li>
+<li>Let d be the deductible if we were to break the phone<br></li>
+<li>Let k be the number of times we break our phone<br></li>
+<li>Let x be the cost of replacing the phone without insurance<br></li>
+<li>Let n be the number of months we pay for insurance</li>
+</ul>
+
+<p>\[
+p(-cn-dk)+(1-p)(-cn) = p(-xk)+(1-p)(0)
+\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Most people aren&#39;t good at math... enter the Insurance Sensibility Calculator!</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="https://scontent.ford1-1.fna.fbcdn.net/hphotos-xpf1/v/t1.0-9/12289476_970605407648_2100244953912320448_n.jpg?oh=c47bb31beb6d35e67f2898f246074f7d&amp;oe=56F85E7D" alt="App"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The app will tell you, in plain text, if insurance makes sense.</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Our Insurance Sensibility Calculator requests only some basic details about insurance plan costs and phone value, and will tell you whether or not it makes sense to spend money on insurance or just save the money.</p>
+
+<p><img src="figure/Plot-1.png" alt="plot of chunk Plot"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='The Problem'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Game Theory'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Most people aren&#39;t good at math... enter the Insurance Sensibility Calculator!'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='The app will tell you, in plain text, if insurance makes sense.'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
