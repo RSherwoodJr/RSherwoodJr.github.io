@@ -82,7 +82,7 @@ img {
 </div>
 <div id="step-2-getting-weather-data" class="section level2">
 <h2>Step 2: Getting Weather Data</h2>
-<p>IFTTT (If This Then That) is a service that allows you to trigger actions based on events. For the context of this problem, I simply wanted weather data, since that drices AC usage. So I set up a rule that appends a Google Drive spreadsheet with weather data, on a daily basis. That data looks like this:</p>
+<p>IFTTT (IF This Then That) is a service that allows you to trigger actions based on events. For the context of this problem, I simply wanted weather data, since that drives AC usage. So I set up a rule that appends a Google Drive spreadsheet with weather data, on a daily basis. That data looks like this:</p>
 <pre><code>##                Date High Low                Weather UV.Index Humidity Wind.Speed Wind.Direction
 ## 1 September 01 2014   81  65          Partly Cloudy        0       60         13      Southwest
 ## 2 September 02 2014   79  61                  Clear        1       53          7      Northwest
@@ -91,7 +91,7 @@ img {
 ## 5 September 05 2014   85  60          Thunderstorms        0       83         13          North
 ## 6 September 06 2014   72  53                  Clear        1       43          6          North</code></pre>
 <p>Unfortunately, some time around September, 2016, IFTTT stopped loading high temperature data, but that’s only a minor wrench in my analysis. Since high and low temp are strongly correlated (<span class="math">\(r^2 = 0.91\)</span>), I can use low temperature, even though the high temperature is actually the reason I’d be using air conditioning.</p>
-<p>Note that this data is at a daily level, whereas the electricity usage is an a half-hour level. To be able to match this data, the electricity usage must be aggregated to the daily level (simply add all the kWh, by date).</p>
+<p>Note that this data is at a daily level, whereas the electricity usage is at a half-hour level. To be able to match this data, the electricity usage must be aggregated to the daily level (simply add all the kWh, by date).</p>
 </div>
 <div id="step-3-observe-relationship" class="section level2">
 <h2>Step 3: Observe Relationship</h2>
