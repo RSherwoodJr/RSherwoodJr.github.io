@@ -395,20 +395,20 @@ $(document).ready(function () {
 <div id="flow-rate" class="section level2">
 <h2>Flow Rate</h2>
 <p>MegaSquirt’s test mode allows you to set:<br />
-+ Output Interval (in miliseconds)<br />
-+ Injector Testing Mode<br />
-+ Injector Channel<br />
-+ Pulsewidth (in miliseconds)<br />
-+ Number of injections</p>
+* Output Interval (in miliseconds)<br />
+* Injector Testing Mode<br />
+* Injector Channel<br />
+* Pulsewidth (in miliseconds)<br />
+* Number of injections</p>
 <p>The output interval is how far apart you want your injector pulses. You’ll see that if you decrease this number, the RPM that is being simpulated increases. For this test, this value is not very important–60ms is fast enough for you to get the data you need.</p>
 <p>Because injectors don’t open or close instantly–the difference of which we call “dead time”–to accurately calculate flow rate, we need to minimize the proportion of time spent with the injector spent partially open. So we will use a large pulse width. The largest value allowed is 65.535ms, but to simplify the math, we want to use 60ms pulsewidth. While precision here isn’t imperative (after all, injectors are typically manufactured in round numbers–you’d buy a 550cc/min injectior, not a 553cc/min injector), we can also add in an assumed dead time. For saturated (high-z) injectors, which have a resistance typically between 10 and 16 ohms, or for low-z injectors with resistor packs, add 1ms; for peak-and-hold (low-z) injectors with drivers, add 0.6ms.</p>
 <p>For the total number of injections, this is where having an idea of the injector volume can be helpful. You don’t want to under-fill your graduated cylinder (on mine, the lowest value is 10mL, so I need more than that to be able to estimate the volume), and you really don’t want to over-fill it and have gasoline spilling everywhere. To get a reasonable estimate for the number of pulses, you can use this formula.</p>
 <p>Let:<br />
-+ V = volume<br />
-+ r = the expected flow rate of your injectors in cc/min<br />
-+ n = number of pulses<br />
-+ w = pulse width in ms<br />
-+ d = expected dead time</p>
+* V = volume<br />
+* r = the expected flow rate of your injectors in cc/min<br />
+* n = number of pulses<br />
+* w = pulse width in ms<br />
+* d = expected dead time</p>
 <p><span class="math display">\[V = \frac {n * r * (w - d)}  {(1000 * 60)}\]</span> (Volume is number of pulses times how much fuel comes out in each pulse, converted from cc/min to mL/ms.)</p>
 <p><span class="math display">\[V * (1000 * 60) = n * r * (w - d)\]</span> <span class="math display">\[n =\frac {V * 1000 * 60} {r * (w - d)}\]</span> Since I wanted about 20mL of gasoline to come out, and I expected my peak-and-hold injectors to be around 440cc/min, and w - d = 60 (see how the math simplifies now?), I get: <span class="math display">\[n = \frac {20 * 1000 * 60} {440 * (60.6 - 0.6)} = \frac {20 * 1000 * 60} {440 * 60} = \frac {20 * 1000 } {440 } = 45.45\]</span> Another tip here: round up to the nearest 10.</p>
 <p>So I set the interval to 60ms, pulsewidth to 60.6ms, and request 50 injections. Now we’re ready to test each injector. I recommend doing this one at a time, to avoid spills and other catastrophy if something goes wrong (note that there is a “stop” button if you need to interrupt the test). Set “Injector Testing Mode” to “One” and select the injector you want to test. Note that the injector channel is not likely to align perfectly with the cylinder number, but is rather the firing order. For my L6 even-fire engine, which fires 1-5-3-6-2-4, that means cylinder 1 is A, 2 is E, 3 is C, 4 is F, 5 is B, and 6 is D.</p>
@@ -426,12 +426,12 @@ $(document).ready(function () {
 <p>_ Tip: For accuracy here, calculate the rate for each individual injector, and adjust the number of pulses accordingly. _</p>
 <p>Injector dead time is dependent on voltage, so if possible, connect your car to a charger while running this test. The test screen also outputs the voltage during the test, so watch that and record the value.</p>
 <p>Let:<br />
-+ r = flow rate in cc/min<br />
-+ w = pulse width in ms<br />
-+ n = number of pulses<br />
-+ E = expected volume of fuel if there were no dead time<br />
-+ A = actual volume of fuel<br />
-+ d = dead time</p>
+* r = flow rate in cc/min<br />
+* w = pulse width in ms<br />
+* n = number of pulses<br />
+* E = expected volume of fuel if there were no dead time<br />
+* A = actual volume of fuel<br />
+* d = dead time</p>
 <p>If there is no injector dead time, then: <span class="math display">\[E = n * w * \frac{r} {1000*60}\]</span> (Number of pulses times how much fuel comes out in each pulse converted to mL/ms.)</p>
 <p>But there is injector dead time. So: <span class="math display">\[A = n * (w - d) * \frac {r} {1000*60}\]</span></p>
 <p>So: <span class="math display">\[E - A = n * w * \frac {r} {1000*60} - n * (w - d) * \frac {r} {1000*60}\]</span> <span class="math display">\[E - A = n * w * \frac {r} {1000*60} - n * w * \frac {r} {1000*60} + n * d * \frac {r} {1000*60}\]</span> <span class="math display">\[E - A = n * d * \frac {r} {1000*60}\]</span> <span class="math display">\[d = \frac {E - A} {n * \frac {r} {1000*60}} = \frac {(E - A)*(1000 * 60)} {n * r}\]</span></p>
